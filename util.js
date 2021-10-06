@@ -21,7 +21,7 @@ function renderBoard(mat, selector) {
       var cell = mat[i][j].value;
       var className = "cell cell" + i + "-" + j;
       strHTML +=
-        `<td ondblclick="doSomething( ${i} , ${j} )" + onClick=" looseLife( ${i} , ${j} ) + handleClick( ${i} , ${j} ) " class="` +
+        `<td ondblclick="addFlag( ${i} , ${j} )" + onClick=" looseLife( ${i} , ${j} ) + handleClick( ${i} , ${j} ) " class="` +
         className +
         '"> ' +
         cell +
