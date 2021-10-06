@@ -21,7 +21,7 @@ function renderBoard(mat, selector) {
       var cell = mat[i][j].value;
       var className = "cell cell" + i + "-" + j;
       strHTML +=
-        `<td ondblclick="addFlag( ${i} , ${j} )" + onClick=" looseLife( ${i} , ${j} ) + handleClick( ${i} , ${j} ) " class="` +
+        `<td ondblclick="addFlag( ${i} , ${j} )" + onClick=" clickCell( ${i} , ${j} )  " class="` +
         className +
         '"> ' +
         cell +
@@ -34,9 +34,22 @@ function renderBoard(mat, selector) {
   elContainer.innerHTML = strHTML;
 }
 
+function clickCell(i, j) {
+  if (isFirst === true && gBoard[i][j].isMine) {
+    isFirst = false;
+    while (gBoard[i][j].isMine) {
+      inIt();
+    }
+    looseLife(i, j);
+    handleClick(i, j);
+  } else {
+    looseLife(i, j);
+    handleClick(i, j);
+  }
+}
+
 function handleClick(i, j) {
   if (i < 0 || i > gLevel.size - 1 || j < 0 || j > gLevel.size - 1) return;
-
   if (gBoard[i][j].isMine === true) return;
   gBoard[i][j].isShown = true;
   gGame.shownCount++;
@@ -82,4 +95,10 @@ function getRandomInt(min, max) {
   min = Math.ceil(min);
   max = Math.floor(max);
   return Math.floor(Math.random() * (max - min) + min); //The maximum is exclusive and the minimum is inclusive
+}
+
+function doSomething(e) {
+  var targ;
+
+  console.log(window.event.srcElement.nodeType);
 }

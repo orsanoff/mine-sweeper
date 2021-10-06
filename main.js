@@ -3,6 +3,7 @@ const MINE = "💣";
 const FLAG = "🚩";
 const HEART = "❤️";
 var hints = 3;
+var isFirst = true;
 var gGame = {
   isOn: false,
   shownCount: 0,
@@ -111,6 +112,8 @@ function looseLife(i, j) {
     renderlives();
     renderCell(i, j, MINE);
     if (life === 0) GameOver(i, j);
+    if (condition) {
+    }
   }
 }
 
