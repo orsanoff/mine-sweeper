@@ -1,0 +1,36 @@
+.cell{
+    min-height: 50px;
+    min-width: 30px;
+    max-width: 40px;
+    max-height: 40px;
+    height: 40;
+    width: 30px;;
+    background-color: grey;
+}
+
+body{
+    text-align: center;
+    margin: auto;
+    background-color: rgba(32, 122, 59, 0.336);
+}
+
+table{
+    margin: auto;
+    text-align: center;
+
+
+}
+
+.butn{
+    margin-bottom: 15px;
+    border-radius: 12px;
+}
+
+.cell:hover{
+    border: 2px solid orange;
+    cursor: pointer;
+}
+.butn:hover{
+    border: 2px solid orange;
+    cursor: pointer;
+}
