@@ -35,7 +35,6 @@ function renderBoard(mat, selector) {
 }
 
 function handleClick(i, j) {
-  doSomething();
   if (i < 0 || i > gLevel.size - 1 || j < 0 || j > gLevel.size - 1) return;
 
   if (gBoard[i][j].isMine === true) return;
@@ -83,16 +82,4 @@ function getRandomInt(min, max) {
   min = Math.ceil(min);
   max = Math.floor(max);
   return Math.floor(Math.random() * (max - min) + min); //The maximum is exclusive and the minimum is inclusive
-}
-
-function doSomething(e) {
-  var targ;
-
-  if (!e) var e = window.event;
-  if (e.target) targ = e.target;
-  else if (e.srcElement) targ = e.srcElement;
-  console.log(targ.nodeType);
-  if (targ.nodeType == 3)
-    // defeat Safari bug
-    targ = targ.parentNode;
 }
