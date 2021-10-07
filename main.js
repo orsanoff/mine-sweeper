@@ -14,7 +14,7 @@ var gLevel = {
   size: 4,
   mines: 2,
 };
-var life = 2;
+var life = 1;
 var gBoard;
 
 function inIt() {
@@ -79,7 +79,7 @@ function easy() {
     size: 4,
     mines: 2,
   };
-  life = 2;
+  life = 1;
   hints = 3;
   renderlives();
   inIt();
